@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Environmental Field Data Collection
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A data Collection created to store environmental characteristics of specifics zones.
 
-## Available Scripts
+### Built with
 
-In the project directory, you can run:
+Bootstrap
+Node.JS
+Express JS
+MySQL
 
-### `npm start`
+### City Form template information to be registered
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Note: db: decibels
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- name
+- inhabitants
+- air quality index:
 
-### `npm test`
+  - 0-50 (Good)
+  - 51-100 (moderate)
+  - 101-150 (harmful for vulnerable groups)
+  - 151-200 (harmful for the rest of the population)
+  - 201-300 (very unhealthy)
+  - over 300 (Hazardous)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- most commont air pollutants:
 
-### `npm run build`
+  - Particular matter
+  - Tropospheric ozone (O3)
+  - Nitrogen Dioxide (NO2)
+  - sulfur dioxide (SO2)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- noise polution levels:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - 10-50db (low)
+  - 55-75db (considered noise)
+  - 75-100db (high noise)
+  - 101-120db (harmful noise)
+  - 121db (irreversible damage)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- presence of garbage
