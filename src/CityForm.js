@@ -1,47 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CityForm.css";
 
-export default function CityForm({ setIsOpen, addTodo }) {
-  let [count, setCount] = React.useState(0);
-  let [newCityValue, setNewCityValue] = React.useState("");
+export default function CityForm({ setIsOpen }) {
+  let [count, setCount] = useState(0);
+  let [newCityValue, setNewCityValue] = useState(0);
+  let [AQI, setAQI] = useState(0);
+  let [pollutants, setpollutants] = useState(0);
+  let [noise, setnoise] = useState(0);
+  let [comment, setcomment] = useState("");
+  let [checkbox, setCheckbox] = useState(false);
 
-  const newCity = (e) => {
-    setNewCityValue(e.target.value);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (newCityValue.length <= 0) return;
-    addTodo(newCityValue);
-  };
-
+  function values1() {
+    if (newCityValue.length > 0) console.log(newCityValue);
+    console.log(AQI);
+    console.log(pollutants);
+    console.log(noise);
+    console.log(checkbox);
+    console.log(comment);
+  }
   return (
     <div className="ModalBackground">
       <div className="card p-2 text-dark bg-opacity-25 popUp_superMain">
-        <form id="myForm" onSubmit={onSubmit}>
+        <div>
           <input
             list="countrySuggestions"
             type="text"
             className="form-control-lg mb-2"
             placeholder="City Name"
             autoComplete="off"
-            onChange={newCity}
+            onChange={(e) => setNewCityValue(e.target.value)}
             required
           ></input>
-          <datalist id="countrySuggestions">
-            <option value="Madrid"></option>
-            <option value="Valparaiso"></option>
-            <option value="Washington-DC"></option>
-            <option value="Denmarc"></option>
-            <option value="Montreal"></option>
-            <option value="Monterrey"></option>
-            <option value="Seville"></option>
-            <option value="Dublin"></option>
-          </datalist>
-        </form>
+        </div>
         <div className="col-md mb-4">
           <div className="form-floating">
-            <select className="form-select" id="floatingSelectGrid">
+            <select
+              className="form-select"
+              id="floatingSelectGrid"
+              onChange={(event) => setAQI({ value: event.target.value })}
+            >
               <option>Air Quality Index</option>
               <option value="Good" className="dropdown-item">
                 0-50 (Good)
@@ -65,10 +62,14 @@ export default function CityForm({ setIsOpen, addTodo }) {
           </div>
         </div>
         <div className="input-group mb-3">
-          <label className="input-group-text" for="inputGroupSelect01">
+          <label className="input-group-text" htmlFor="inputGroupSelect01">
             pollutants
           </label>
-          <select className="form-select" id="inputGroupSelect01">
+          <select
+            onChange={(event) => setpollutants({ value: event.target.value })}
+            className="form-select"
+            id="inputGroupSelect01"
+          >
             <option>Select</option>
             <option value="P-M">Particular matter</option>
             <option value="03">Tropospheric ozone (O3)</option>
@@ -77,37 +78,43 @@ export default function CityForm({ setIsOpen, addTodo }) {
           </select>
         </div>
         <div className="col-md mb-4">
-          <div>
-            <select
-              className="form-select"
-              id="floatingSelectGrid2"
-              aria-label="Floating label select example"
-            >
-              <option>Noise Pollution levels</option>
-              <option value="Low" className="dropdown-item">
-                0-50db (low)
-              </option>
-              <option value="Considerate" className="dropdown-item">
-                51-75db (considerate noise)
-              </option>
-              <option value="High" className="dropdown-item">
-                75-100db (high noise)
-              </option>
-              <option value="Harmful" className="dropdown-item">
-                101-120db (harmful noise){" "}
-              </option>
-              <option value="Irreversible" className="dropdown-item">
-                121db (irreversible damage)
-              </option>
-            </select>
-          </div>
+          <select
+            className="form-select"
+            id="floatingSelectGrid2"
+            aria-label="Floating label select example"
+            onChange={(event) => setnoise({ value: event.target.value })}
+          >
+            <option>Noise Pollution levels</option>
+            <option value="Low" className="dropdown-item">
+              0-50db (low)
+            </option>
+            <option value="Considerate" className="dropdown-item">
+              51-75db (considerate noise)
+            </option>
+            <option value="High" className="dropdown-item">
+              75-100db (high noise)
+            </option>
+            <option value="Harmful" className="dropdown-item">
+              101-120db (harmful noise){" "}
+            </option>
+            <option value="Irreversible" className="dropdown-item">
+              121db (irreversible damage)
+            </option>
+          </select>
+        </div>
+        <div className="chekbox">
+          <p>Garbage</p>
+          <input type="checkbox" onChange={(e) => setCheckbox(!checkbox)} />
         </div>
         <div className="input-group">
           <span className="input-group-text">Comments</span>
           <textarea
             type="text"
             rows={5}
-            onChange={(e) => setCount(e.target.value.length)}
+            onChange={(e) => {
+              setCount(e.target.value.length);
+              setcomment(e.target.value);
+            }}
             className="form-control"
             id="commentsId"
             aria-label="With textarea"
@@ -117,10 +124,13 @@ export default function CityForm({ setIsOpen, addTodo }) {
           <p id="status">{count}</p>
         </div>
         <button
-          type="button"
+          type="submit"
           id="save"
           className="btn btn-outline-secondary btn-lg"
-          onClick={() => setIsOpen(false)}
+          onClick={() => {
+            setIsOpen(false);
+            values1();
+          }}
         >
           save
         </button>
