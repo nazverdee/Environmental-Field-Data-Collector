@@ -1,22 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./CityForm.css";
 
-export default function CityForm({ setIsOpen }) {
+export default function CityForm({ setIsOpen = true }) {
   let [count, setCount] = useState(0);
   let [newCityValue, setNewCityValue] = useState(0);
   let [AQI, setAQI] = useState(0);
   let [pollutants, setpollutants] = useState(0);
   let [noise, setnoise] = useState(0);
   let [comment, setcomment] = useState("");
-  let [checkbox, setCheckbox] = useState(false);
 
   function values1() {
-    if (newCityValue.length > 0) console.log(newCityValue);
-    console.log(AQI);
-    console.log(pollutants);
-    console.log(noise);
-    console.log(checkbox);
-    console.log(comment);
+    axios.post(`https://62f3115118493ca21f3d133f.mockapi.io/CityForm`, {
+      newCityValue,
+      AQI,
+      pollutants,
+      noise,
+      comment,
+    });
   }
   return (
     <div className="ModalBackground">
@@ -71,7 +72,7 @@ export default function CityForm({ setIsOpen }) {
             id="inputGroupSelect01"
           >
             <option>Select</option>
-            <option value="P-M">Particular matter</option>
+            <option value="PM">Particular matter</option>
             <option value="03">Tropospheric ozone (O3)</option>
             <option value="NO2">Nitrogen Dioxide (NO2)</option>
             <option value="SO2">sulfur dioxide (SO2)</option>
@@ -101,10 +102,6 @@ export default function CityForm({ setIsOpen }) {
               121db (irreversible damage)
             </option>
           </select>
-        </div>
-        <div className="chekbox">
-          <p>Garbage</p>
-          <input type="checkbox" onChange={(e) => setCheckbox(!checkbox)} />
         </div>
         <div className="input-group">
           <span className="input-group-text">Comments</span>
