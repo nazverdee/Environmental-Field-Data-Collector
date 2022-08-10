@@ -37,5 +37,3 @@ Note: db: decibels
   - 75-100db (high noise)
   - 101-120db (harmful noise)
   - 121db (irreversible damage)
-
-- presence of garbage
