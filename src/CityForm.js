@@ -11,7 +11,7 @@ export default function CityForm({ setIsOpen = true }) {
   let [comment, setcomment] = useState("");
 
   function values1() {
-    axios.post(`https://62f3115118493ca21f3d133f.mockapi.io/CityForm`, {
+    axios.post(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`, {
       newCityValue,
       AQI,
       pollutants,
@@ -19,6 +19,7 @@ export default function CityForm({ setIsOpen = true }) {
       comment,
     });
   }
+
   return (
     <div className="ModalBackground">
       <div className="card p-2 text-dark bg-opacity-25 popUp_superMain">

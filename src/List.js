@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "semantic-ui-react";
 import axios from "axios";
 import "./List.css";
 import { Table } from "semantic-ui-react";
@@ -8,11 +9,27 @@ export default function List() {
 
   useEffect(() => {
     axios
-      .get(`https://62f3115118493ca21f3d133f.mockapi.io/CityForm`)
+      .get(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`)
       .then((response) => {
         setAPIData(response.data);
       });
   }, []);
+
+  const onDelete = (id) => {
+    axios
+      .delete(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm/${id}`)
+      .then(() => {
+        getData();
+      });
+  };
+
+  const getData = () => {
+    axios
+      .get(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`)
+      .then((getData) => {
+        setAPIData(getData.data);
+      });
+  };
 
   return (
     <div id="main">
@@ -24,6 +41,7 @@ export default function List() {
             <Table.HeaderCell>Noise</Table.HeaderCell>
             <Table.HeaderCell>Pollutant</Table.HeaderCell>
             <Table.HeaderCell>Comment</Table.HeaderCell>
+            <Table.HeaderCell>Delete</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -35,6 +53,15 @@ export default function List() {
                 <Table.Cell>{data.noise.value}</Table.Cell>
                 <Table.Cell>{data.pollutants.value}</Table.Cell>
                 <Table.Cell>{data.comment}</Table.Cell>
+                <Table.Cell>
+                  <Button
+                    onClick={() => {
+                      onDelete(data.id);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </Table.Cell>
               </Table.Row>
             );
           })}

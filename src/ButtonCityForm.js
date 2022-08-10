@@ -8,7 +8,7 @@ export default function CreateTodoButton({ setIsOpen }) {
       id="Form"
       onClick={() => setIsOpen(true)}
     >
-      City Form
+      Add City
     </button>
   );
 }
