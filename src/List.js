@@ -12,6 +12,9 @@ export default function List() {
       .get(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`)
       .then((response) => {
         setAPIData(response.data);
+      })
+      .catch((error) => {
+        console.log("No data to be shown");
       });
   }, []);
 

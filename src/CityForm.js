@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CityForm.css";
+//import createHistory from "history/createBrowserHistory";
 
 export default function CityForm({ setIsOpen = true }) {
   let [count, setCount] = useState(0);
@@ -9,6 +10,7 @@ export default function CityForm({ setIsOpen = true }) {
   let [pollutants, setpollutants] = useState(0);
   let [noise, setnoise] = useState(0);
   let [comment, setcomment] = useState("");
+  //const history = createHistory();
 
   function values1() {
     axios.post(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`, {
@@ -128,6 +130,8 @@ export default function CityForm({ setIsOpen = true }) {
           onClick={() => {
             setIsOpen(false);
             values1();
+            //history.go(0);
+            window.location.reload();
           }}
         >
           save
