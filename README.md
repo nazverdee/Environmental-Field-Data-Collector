@@ -4,10 +4,9 @@ A data Collection created to store environmental characteristics of specifics zo
 
 ### Built with
 
-React
-Bootstrap
-Mockapi API: https://62f3115118493ca21f3d133f.mockapi.io/CityForm
-
+- React
+- Bootstrap
+- Mockapi API: https://62f3115118493ca21f3d133f.mockapi.io/CityForm
 
 ### City Form template information to be registered
 
