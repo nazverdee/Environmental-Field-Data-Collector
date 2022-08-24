@@ -10,9 +10,8 @@ A data Collection created to store environmental characteristics of specifics zo
 
 ### City Form template information to be registered
 
-Note: db: decibels
 
-- name
+- city name
 - population
 - air quality index:
 
