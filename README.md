@@ -13,7 +13,7 @@ A data Collection created to store environmental characteristics of specifics zo
 Note: db: decibels
 
 - name
-- inhabitants
+- population
 - air quality index:
 
   - 0-50 (Good)
