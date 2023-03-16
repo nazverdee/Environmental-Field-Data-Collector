@@ -1,21 +1,8 @@
-#recentCitiesAdded {
+.recentCitiesAdded {
     position: relative;
     top: 0;
     transition: top ease 0.5s;
     border-radius: 0.2em;
-}
-
-#recentCitiesAdded:hover {
-    top: -8px;
-}
-
-.cityTopSection {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#recentCitiesAdded {
     display: block;
     box-shadow: 0.5px 0.5px 3px gray;
     background-color: white;
@@ -23,6 +10,17 @@
     height: 28em;
     display: block;
     cursor: pointer;
+    opacity:0.8;
+}
+
+.recentCitiesAdded:hover {
+    top: -15px;
+}
+
+.cityTopSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #listtitle {

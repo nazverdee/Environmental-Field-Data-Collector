@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; //State
 import axios from "axios";
 import "./CityForm.css";
 //import createHistory from "history/createBrowserHistory";
 
 export default function CityForm({ setIsOpen = true }) {
-  let [count, setCount] = useState(0);
-  let [newCityValue, setNewCityValue] = useState(0);
-  let [AQI, setAQI] = useState(0);
+  let [count, setCount] = useState(0); //0 is initial value
+  let [newCityValue, setNewCityValue] = useState(0); //0 as initial value bc simple selection questions.
+  let [AQI, setAQI] = useState(0); 
   let [pollutants, setpollutants] = useState(0);
   let [noise, setnoise] = useState(0);
   let [comment, setcomment] = useState("");
-  //const history = createHistory();
 
   function values1() {
     axios.post(`https://62f3b096b81dba4a01393cf2.mockapi.io/CityForm`, {
@@ -134,7 +133,7 @@ export default function CityForm({ setIsOpen = true }) {
             window.location.reload();
           }}
         >
-          save
+          Save
         </button>
       </div>
     </div>

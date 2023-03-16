@@ -6,11 +6,11 @@ import ButtonCityForm from "./ButtonCityForm";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export default function Main() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); //useState Hook
 
   return (
-    <Router className="row">
-      <div id="recentCitiesAdded">
+    <Router className="row" id="frame">
+      <div className="recentCitiesAdded">
         <section className="cityTopSection">
           <h1 id="listtitle">Cities Added List</h1>
           <ButtonCityForm setIsOpen={setIsOpen} />
