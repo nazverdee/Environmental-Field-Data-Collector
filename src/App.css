@@ -1,6 +1,9 @@
 body {
-    background-color: #f5f9ff;
     font-family: "Playfair Display";
+    background-image: url("gallery/calabazas.jpg");
+    /*background-size: cover;*/
+    background-position: center;
+    background-repeat: no-repeat;
     line-height: 1.25;
     color: #2e402c;
     margin: 0 auto;
@@ -9,18 +12,14 @@ body {
 
 #TITLE {
     font-size: 1.6em;
-    background-image: url("gallery/header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 10em;
-    background-position: bottom;
 }
 
 #TITLE h4 {
+    color: #1b4b43;
     border: 2px solid white;
     width: 18em;
     margin: 1em auto;
     font-size: 2em;
     font-weight: bolder;
-    text-shadow: 2px 2px #2e402c;
+    text-shadow: 2px -0.5px #4a756e;
 }
