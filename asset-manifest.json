@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Environmental-Field-Data-Collector/static/css/main.49bf858e.css",
+    "main.js": "/Environmental-Field-Data-Collector/static/js/main.fd6b5468.js",
+    "static/js/787.a93e945d.chunk.js": "/Environmental-Field-Data-Collector/static/js/787.a93e945d.chunk.js",
+    "static/media/calabazas.jpg": "/Environmental-Field-Data-Collector/static/media/calabazas.476573a30b8a237921b6.jpg",
+    "index.html": "/Environmental-Field-Data-Collector/index.html",
+    "main.49bf858e.css.map": "/Environmental-Field-Data-Collector/static/css/main.49bf858e.css.map",
+    "main.fd6b5468.js.map": "/Environmental-Field-Data-Collector/static/js/main.fd6b5468.js.map",
+    "787.a93e945d.chunk.js.map": "/Environmental-Field-Data-Collector/static/js/787.a93e945d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49bf858e.css",
+    "static/js/main.fd6b5468.js"
+  ]
+}
